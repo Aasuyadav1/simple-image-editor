@@ -1,0 +1,203 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primary-font-color:black;
+    --secondary-font-color:white;
+    --main-background-color:#f6f6f6;
+    --secondary-background-color:grey;
+    --btn-color:blue;
+    --btn-hover-color:yellow;
+}
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+::-webkit-scrollbar {
+    height: 4px;
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: white;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: var(--main-background-color);
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+.flex-row{
+    display: flex;
+}
+.flex-col{
+    display: flex;
+    flex-direction: column;
+}
+.js-sb{
+    justify-content: space-between;
+}
+.js-ar{
+    justify-content: space-around;
+}
+.js-ce{
+    justify-content: center;
+}
+.al-ce{
+    align-items: center;
+}
+.row-gap{
+    gap: 10px;
+}
+.col-gap{
+    gap: 10px;
+}
+.text-al-ce{
+    text-align: center;
+}
+button,
+.btn{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    position: relative;
+}
+.container{
+    min-height: 100vh;
+    width: 100%;
+    font-family: sans-serif;
+    background-color: var(--main-background-color);
+}
+
+/* navbar section started from here */
+nav{
+    padding: 10px 20px;
+    background-color: white;
+    
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.412);
+    z-index: 50;
+
+ 
+}
+#upload{
+    display: none;
+}
+nav h2{
+    color: var(--primary-font-color);
+}
+nav .buttons button,
+nav .buttons .btn{
+    padding: 8px 20px;
+    font-weight: 550;
+    border-radius: 1px;
+}
+nav .buttons .btn{
+    background: rgb(132, 0, 255);
+    color: white;
+}
+nav .buttons button:nth-child(2){
+    background-color: white;
+}
+
+/* tools section strted from here */
+section{
+    z-index: 5;
+}
+.range-filter{
+    margin-top: 20px;
+}
+.left-tools{
+    max-width: 300px;
+    width: 100%;
+    border-right: 2px solid rgba(0, 0, 0, 0.166);
+    height: 100%;
+    padding: 30px 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.537);
+}
+.left-tools :in-range{
+    width: 100%;
+    cursor: pointer;
+    margin-top: 5px;
+}
+.brightness{
+    margin-top: 10px;
+}
+.rotate{
+    margin-top: 20px;
+}
+.rotate-flip{
+    display: flex;
+    gap: 5px;
+    margin-top: 15px;
+}
+.rotate-flip span{
+    background-color: rgb(214, 204, 204);
+    width: 40px;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.rotate-flip span:active
+{
+    scale: 0.8;
+}
+.rotate-flip span:hover{
+    background-color: rgba(0, 0, 0, 0.511);
+    color: white;
+}
+.rotate-range{
+    margin-top: 20px;
+}
+.crop{
+    margin-top: 20px;
+}
+.crop-range{
+    margin-top: 10px;
+}
+.height-dis{
+    width: 70px;
+    height: 20px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.height-dis input{
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    border: 1px solid black;
+    padding: 10px;
+    background-color: aliceblue;
+}
+
+.right-image{
+    width: 100%;
+    gap: 50px;
+    background-color: rgb(242,242,242);
+}
+.image{
+    width: 500px;
+    height: 500px;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+.image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
