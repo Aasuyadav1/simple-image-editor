@@ -15,13 +15,15 @@
                 <div class="buttons flex-row row-gap">
                     <label for="upload" class="btn">Upload img</label>
                     <input type ="file" id="upload" accept="image/png, image/jpeg">
-                    <button>Dowload img</button>
+                    <button class="down">Dowload img</button>
                 </div>
             </nav>
             <section class="flex-row col-gap">
                 <div class="left-tools">
                     <div class="filters">
-                        <h3 class="">Filter</h3>
+                        <div class="filtered">
+
+                            <h3 class="">Filter</h3>
                         <div class="range-filter">
                             <div class="brightness">
                                 <div class="brightness-header flex-row js-sb">
@@ -35,7 +37,7 @@
                                     <p class="filter-title">Inversion</p>
                                     <p class="filter-data inver-value">100%</p>
                                 </div>
-                                <input type="range" name=""  id="Inversion" max="100">
+                                <input type="range" name=""  id="Inversion" value="0" max="100">
                             </div>
                             <div class="brightness">
                                 <div class="brightness-header flex-row js-sb">
@@ -52,57 +54,54 @@
                                 <input type="range" name="" id="grayscale"  max="100">
                             </div>
                         </div>
-                        <h3 class="rotate">Rotate & Flip</h3>
+
+                        </div>
+                        <div class="filtered rotate-fil">
+
+                            <h3 class="rotate">Rotate & Flip</h3>
                         <div class="rotate-flip">
-                            <span class="material-symbols-outlined ro-right" title="rotate-right">
+                            <span class="material-symbols-outlined ro-right"  title="rotate-right">
                                 rotate_right
                             </span>
+                            <p class="tootlist ro-ri">Rotate-right</p>
                             <span class="material-symbols-outlined ro-left" title="rotate-left">
                                 rotate_left
                             </span>
+                            <p class="tootlist ro-li">Rotate-left</p>
                             <span class="material-symbols-outlined flip-hor" title="Flip-horizontal">
                                 flip
                             </span>
+                            <p class="tootlist ro-fi">Flip</p>
                             <span class="material-symbols-outlined flip-ver" title="Flip-vertical">
                                 cameraswitch
                             </span>
+                            <p class="tootlist ro-no">Normal</p>
                         </div>
-                        <div class="rotate-range flex-c0l">
-                            <div class="brightness-header flex-row js-sb">
-                                <p class="filter-title">Rotate</p>
-                                <p class="filter-data">50deg</p>
-                            </div>
-                            <input type="range" name="" id="" min="0" max="100">
+
                         </div>
-                        <h3 class="crop">Crop</h3>
-                        <div class="crop-range flex-col row-gap">
-                            <div class="crop-height flex-row js-sb al-ce">
-                                <p>Height</p>
-                                <div class="height-dis">
-                                    <input type="number" name="" id="" placeholder="400px">
-                                </div>
-                            </div>
-                            <div class="crop-height flex-row js-sb al-ce">
-                                <p>Width</p>
-                                <div class="height-dis">
-                                    <input type="number" name="" id="" placeholder="400px">
-                                </div>
-                            </div>
-                        </div>
+                        <div class="filtered crop-fil">
+
+                            <h3 class="crop">Crop</h3>
                         <div class="rotate-flip">
-                            <span class="material-symbols-outlined">
+                            <span class="material-symbols-outlined crop">
+                                aspect_ratio
+                            </span>
+                            <span class="material-symbols-outlined crop">
                                 crop_16_9
                             </span>
-                            <span class="material-symbols-outlined">
+                            <span class="material-symbols-outlined crop">
                                 crop_3_2 
                             </span>
-                            <span class="material-symbols-outlined">
+                            <span class="material-symbols-outlined crop">
                                 crop_5_4
                             </span>
-                            <span class="material-symbols-outlined">
+                            <span class="material-symbols-outlined crop">
                                 crop_9_16
                             </span>
                         </div>
+
+                        </div>
+                        
                     </div>
 
 
@@ -110,8 +109,8 @@
 
                 </div>
                 <div class="right-image flex-row js-ce al-ce">
-                    <div class="image">
-                        <img src="https://cdn.vectorstock.com/i/preview-1x/65/30/default-image-icon-missing-picture-page-vector-40546530.jpg" alt="" class="prev-img">
+                    <div class="image flex-row js-ce al-ce">
+                        <img src="https://static.thenounproject.com/png/2616531-200.png" alt="" class="prev-img">
                     </div>
                 </div>
             </section>

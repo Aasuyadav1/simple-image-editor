@@ -6,11 +6,12 @@
     box-sizing: border-box;
 }
 :root{
-    --primary-font-color:black;
+    --primary-font-color:white;
     --secondary-font-color:white;
-    --main-background-color:#f6f6f6;
-    --secondary-background-color:grey;
-    --btn-color:blue;
+    --main-background-color:rgb(41,44,49);
+    --image-area-bg:rgb(23,23,25);
+    --secondary-background-color:#212529;
+    --btn-color:rgb(0,160,214);
     --btn-hover-color:yellow;
 }
 img,
@@ -18,17 +19,20 @@ svg {
     display: block;
     max-width: 100%;
 }
+body{
+    scroll-behavior: smooth;
+}
 ::-webkit-scrollbar {
     height: 4px;
     width: 8px;
 }
 ::-webkit-scrollbar-track {
-    background: white;
+    background: var(--main-background-color);
 }
 
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background: var(--main-background-color);
+    background:rgb(66, 67, 71);
 }
 a{
     text-decoration: none;
@@ -80,13 +84,10 @@ button,
 
 /* navbar section started from here */
 nav{
-    padding: 10px 20px;
-    background-color: white;
-    
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.412);
+    padding: 15px 20px;
+    background-color: rgb(36,38,43);
     z-index: 50;
 
- 
 }
 #upload{
     display: none;
@@ -97,52 +98,78 @@ nav h2{
 nav .buttons button,
 nav .buttons .btn{
     padding: 8px 20px;
-    font-weight: 550;
     border-radius: 1px;
 }
 nav .buttons .btn{
-    background: rgb(132, 0, 255);
-    color: white;
+    background: rgb(0,160,214);
+    color: var(--primary-font-color);
+    border-radius: 7px;
 }
-nav .buttons button:nth-child(2){
-    background-color: white;
+nav .buttons .down{
+    border-radius: 7px;
+    background-color: transparent;
+    color: rgb(127,128,131);
+    border: 2px solid rgb(127,128,131);
 }
 
 /* tools section strted from here */
 section{
     z-index: 5;
+    color: var(--primary-font-color);
 }
 .range-filter{
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 .left-tools{
-    max-width: 300px;
+    max-width: 400px;
     width: 100%;
-    border-right: 2px solid rgba(0, 0, 0, 0.166);
+    margin-top: 5px;
     height: 100%;
-    padding: 30px 20px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.537);
+    padding: 10px;
+ 
 }
 .left-tools :in-range{
     width: 100%;
     cursor: pointer;
     margin-top: 5px;
 }
-.brightness{
-    margin-top: 10px;
+.filtered{
+    background: rgba( 39, 42, 46, 0.8 );
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding: 20px 15px;
 }
-.rotate{
+.rotate-fil{
     margin-top: 20px;
 }
+.filter-data{
+    opacity: 0.9rem;
+    font-size: 0.9rem;
+}
+.brightness{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
 .rotate-flip{
     display: flex;
     gap: 5px;
-    margin-top: 15px;
+    margin-top: 25px;
 }
 .rotate-flip span{
-    background-color: rgb(214, 204, 204);
-    width: 40px;
-    aspect-ratio: 1;
+    background: rgb(56,58,62);
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    width: 83px;
+    aspect-ratio: 2/1.1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -155,13 +182,13 @@ section{
 }
 .rotate-flip span:hover{
     background-color: rgba(0, 0, 0, 0.511);
-    color: white;
+    color: var(--primary-font-color);
 }
 .rotate-range{
     margin-top: 20px;
 }
-.crop{
-    margin-top: 20px;
+.crop-fil{
+    margin-top: 20px; 
 }
 .crop-range{
     margin-top: 10px;
@@ -169,7 +196,7 @@ section{
 .height-dis{
     width: 70px;
     height: 20px;
-    color: white;
+    color: var(--primary-font-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -187,19 +214,104 @@ section{
 .right-image{
     width: 100%;
     gap: 50px;
-    background-color: rgb(242,242,242);
+    background-color: var(--image-area-bg);
+    min-height: 92vh;
+    /* padding: 20px 0; */
 }
 .image{
     width: 500px;
     height: 500px;
-    aspect-ratio: 1;
     object-fit: cover;
+    overflow: hidden;
+
 }
 .image img{
-    width: 100%;
-    height: 100%;
+    width: 90%;
     object-fit: cover;
+    aspect-ratio: 1;
     opacity: 0.8;
     pointer-events: none;
+    /* rotate: 50deg; */
+}
+.rotate-right{
+    rotate: 90deg;
+}
+.rotate-left{
+    rotate: -90deg;
+}
+.flip-hori{
+    rotate: 180deg;
+}
+.flip-ver{
+    rotate: 360deg;
+}
+.ro-right,
+.ro-li,
+.ro-fi,
+.ro-no{
+    position: relative;
+}
 
+/* totlist started from here */
+.ro-ri,.ro-li,
+.ro-fi,.ro-no{
+    /* display: none; */
+    background-color: white;
+    color: black;
+    font-size: 0.8rem;
+    padding: 3px 5px;
+    position: absolute;
+    z-index: 5;
+    bottom: -5%;
+    border-radius: 5px;
+    left: 4%;
+    visibility: hidden;
+}
+.ro-li{
+    left: 29%;
+}
+.ro-fi{
+    left: 57%;
+}
+.ro-no{
+    left: 79%;
+}
+.ro-right:hover + .ro-ri,
+.ro-left:hover + .ro-li,
+.flip-hor:hover + .ro-fi,
+.flip-ver:hover + .ro-no{
+    visibility: visible;
+}
+.ro-ri::before,
+.ro-li::before,
+.ro-fi::before,
+.ro-no::before{
+    position: absolute;
+    content: "";
+    bottom: 100%;  /* At the top of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent white transparent;
+}
+@media (max-width:904px) {
+    section{
+        flex-wrap: wrap-reverse;
+    }
+    .right-image{
+        min-height: 0;
+   
+  
+    }.image{
+        height: 100%;
+    }nav{
+        padding-inline: 2px;
+    }
+}
+@media (max-width:410px) {
+    nav h2{
+        font-size: 1rem;
+
+    }
 }
