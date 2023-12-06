@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <title>Document</title>
+    <title>Image editor</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.6.0/remixicon.css" integrity="sha512-GL7EM8Lf8kU23I3kTio2kRWt8YRDVIQcSZjRVtVRfk05kB/QvkyafuTC94Ev0X6qk7Z0r5s06c1lsP1p/ezDYw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div class="container">
@@ -60,21 +61,25 @@
 
                             <h3 class="rotate">Rotate & Flip</h3>
                         <div class="rotate-flip">
-                            <span class="material-symbols-outlined ro-right"  title="rotate-right">
+                            <!-- <span class="material-symbols-outlined ro-right"  title="rotate-right">
                                 rotate_right
-                            </span>
+                            </span> -->
+                            <i class="ri-loop-right-line ro-right" title="rotate-right"></i>
                             <p class="tootlist ro-ri">Rotate-right</p>
-                            <span class="material-symbols-outlined ro-left" title="rotate-left">
+                            <!-- <span class="material-symbols-outlined ro-left" title="rotate-left">
                                 rotate_left
-                            </span>
+                            </span> -->
+                            <i class="ri-loop-left-line ro-left"></i>
                             <p class="tootlist ro-li">Rotate-left</p>
-                            <span class="material-symbols-outlined flip-hor" title="Flip-horizontal">
+                            <!-- <span class="material-symbols-outlined flip-hor" title="Flip-horizontal">
                                 flip
-                            </span>
+                            </span> -->
+                            <i class="ri-arrow-turn-forward-line flip-hor"></i>
                             <p class="tootlist ro-fi">Flip</p>
-                            <span class="material-symbols-outlined flip-ver" title="Flip-vertical">
+                            <!-- <span class="material-symbols-outlined flip-ver" title="Flip-vertical">
                                 cameraswitch
-                            </span>
+                            </span> -->
+                            <i class="ri-arrow-turn-back-fill flip-ver"></i>
                             <p class="tootlist ro-no">Normal</p>
                         </div>
 
@@ -83,20 +88,20 @@
 
                             <h3 class="crop">Crop</h3>
                         <div class="rotate-flip">
-                            <span class="material-symbols-outlined crop">
-                                aspect_ratio
+                            <span class="crop">
+                                1:1
                             </span>
-                            <span class="material-symbols-outlined crop">
-                                crop_16_9
+                            <span class="crop">
+                               16:9
                             </span>
-                            <span class="material-symbols-outlined crop">
-                                crop_3_2 
+                            <span class="crop">
+                                3:2
                             </span>
-                            <span class="material-symbols-outlined crop">
-                                crop_5_4
+                            <span class="crop">
+                                5:4
                             </span>
-                            <span class="material-symbols-outlined crop">
-                                crop_9_16
+                            <span class=" crop">
+                                9:16
                             </span>
                         </div>
 
@@ -112,6 +117,7 @@
                     <div class="image flex-row js-ce al-ce">
                         <img src="https://static.thenounproject.com/png/2616531-200.png" alt="" class="prev-img">
                     </div>
+                 
                 </div>
             </section>
         </main>
